@@ -1,4 +1,4 @@
-https://uos-milab.gihub.io
+https://uos-milab.gihub.io/
 
 # MILab Website
 
