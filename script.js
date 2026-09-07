@@ -15,7 +15,7 @@ const MS = [
   { name: "Jaegyun Im", email: "imij0522@gmail.com", interests: ["Multi-modal Large Language Models", "Generative AI"], photo: "assets/images/members/jaegyunim.jpg" },
   { name: "Dongwoo Kim", email: "shanghai110930@gmail.com", interests: ["Computer Vision", "Multi-modal Large Language Models"], photo: "assets/images/members/dongwookim.jpg" },
   { name: "Nari Yun", email: "ynr2472@naver.com", interests: ["Computer Vision"], photo: "assets/images/members/nariyun.jpg" },
-  { name: "Eunha Lee", email: "happyemmy@uos.ac.kr", interests: ["Computer Vision"], initials" "EH" },
+  { name: "Eunha Lee", email: "happyemmy@uos.ac.kr", interests: ["Computer Vision"], initials: "EH" },
   { name: "Jeonghyun Kim", email: "kr.jeonghyun.kim@gmail.com", interests: ["Vision Transformer", "DL Backbone"], photo: "assets/images/members/jeonghyunkim.jpg" },
 ];
 
