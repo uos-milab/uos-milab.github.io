@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="서울시립대학교 Machine Intelligence Lab 구성원 소개" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Members · Machine Intelligence Lab</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">본문으로 바로가기</a>
+    <div class="top-notice"><div class="wrap top-notice__inner"><div class="top-notice__text"><b>공지:</b> MILab 대학원생 및 학부 인턴을 모집합니다.</div><a class="top-notice__btn" href="contact.html">관련 정보</a></div></div>
+    <header class="site-header">
+      <div class="wrap header__inner">
+        <a class="brand" href="index.html" aria-label="MILab Home"><span class="brand__mark" aria-hidden="true"></span><span class="brand__text"><span class="brand__title">MILab</span><span class="brand__sub">Machine Intelligence Laboratory</span></span></a>
+        <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-nav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg></button>
+        <nav id="site-nav" class="site-nav" aria-label="Primary"><a class="nav-link" href="index.html">MILab</a><a class="nav-link active" href="members.html">Members</a><a class="nav-link" href="research.html">Research</a><a class="nav-link" href="publications.html">Publications</a><a class="nav-link" href="gallery.html">Gallery</a><a class="nav-link" href="contact.html">Contact</a></nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="page-title-section"><div class="wrap"><h1 class="page-title">Members</h1></div></section>
+      <section class="section">
+        <div class="wrap">
+          <h2 class="team-section-title">PI</h2>
+          <div class="team-grid team-grid--pi">
+            <article class="profile">
+              <div class="profile-photo profile-photo--pi"><img src="assets/images/members/youngminro.jpg" alt="Youngmin Ro 교수" width="266" height="500" /></div>
+              <div class="profile-body">
+                <div class="profile-name-row"><span class="profile-name">Youngmin Ro</span><a href="https://sites.google.com/view/youngmin-ro-vision/" target="_blank" rel="noopener noreferrer" aria-label="Youngmin Ro personal website">↗</a></div>
+                <div class="profile-role">Associate Professor · Director</div>
+                <div class="profile-email"><a href="mailto:youngmin.ro@uos.ac.kr">youngmin.ro (at) uos.ac.kr</a></div>
+                <div class="profile-research"><span class="profile-tag">Deep Learning</span><span class="profile-tag">Computer Vision</span></div>
+              </div>
+            </article>
+          </div>
+
+          <h2 class="team-section-title">Ph.D. Students</h2>
+          <div class="team-grid" id="phd-grid"></div>
+
+          <h2 class="team-section-title">M.S. Students</h2>
+          <div class="team-grid" id="ms-grid"></div>
+
+          <h2 class="team-section-title">Undergraduate Research Interns</h2>
+          <div class="team-grid" id="intern-grid"></div>
+
+          <h2 class="team-section-title">Alumni</h2>
+          <div class="team-grid" id="alumni-grid"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="wrap footer__inner"><p>Machine Intelligence Laboratory, Department of Artificial Intelligence, University of Seoul · 163 Seoulsiripdae-ro, Dongdaemun-gu, Seoul, Republic of Korea</p><p>© <span id="year"></span> MILab</p></div></footer>
+  </body>
+</html>

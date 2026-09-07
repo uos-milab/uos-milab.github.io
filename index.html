@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="서울시립대학교 Machine Intelligence Lab. Deep Learning과 Computer Vision을 연구합니다." />
+    <meta name="theme-color" content="#061e3a" />
+    <meta property="og:title" content="MILab · Machine Intelligence Lab" />
+    <meta property="og:description" content="Machine Intelligence Lab at the University of Seoul" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/images/hero-machine-vision.jpg" />
+    <title>Home · Machine Intelligence Lab</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800&amp;display=swap" rel="stylesheet" />
+    <link rel="preload" href="assets/images/hero-machine-vision.jpg" as="image" type="image/png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">본문으로 바로가기</a>
+
+    <div class="top-notice">
+      <div class="wrap top-notice__inner">
+        <div class="top-notice__text"><b>공지:</b> MILab 대학원생 및 학부 인턴을 모집합니다.</div>
+        <a class="top-notice__btn" href="contact.html">관련 정보</a>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="wrap header__inner">
+        <a class="brand" href="index.html" aria-label="MILab Home">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span class="brand__text"><span class="brand__title">MILab</span><span class="brand__sub">Machine Intelligence Laboratory</span></span>
+        </a>
+        <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-nav">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
+          <a class="nav-link active" href="index.html">MILab</a>
+          <a class="nav-link" href="members.html">Members</a>
+          <a class="nav-link" href="research.html">Research</a>
+          <a class="nav-link" href="publications.html">Publications</a>
+          <a class="nav-link" href="gallery.html">Gallery</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero--carousel">
+        <div class="wrap">
+          <div class="hero-carousel" data-autoplay="true" data-interval="5500">
+            <div class="hero-carousel__viewport" aria-label="MILab research highlights">
+              <article class="hero-carousel__slide is-active">
+                <img class="hero-carousel__img" src="assets/images/hero-machine-vision.jpg" alt="인공지능의 시각 인식 과정을 표현한 그래픽" width="1672" height="941" />
+                <div class="hero-carousel__shade" aria-hidden="true"></div>
+                <div class="hero-carousel__overlay hero-carousel__overlay--minimal">
+                  <div class="hero-carousel__kicker">WELCOME TO</div>
+                  <div class="hero-carousel__headline">Machine Intelligence Lab.</div>
+                  <div class="hero-carousel__sub">We explore efficient, robust, and generalizable intelligence through deep learning and computer vision.</div>
+                  <div class="hero-carousel__actions">
+                    <a class="btn primary" href="contact.html">Join MILab</a>
+                    <a class="btn" href="publications.html">See Publications</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="hero-carousel__slide hero-carousel__slide--contain">
+                <div class="hero-carousel__paper-canvas">
+                  <img class="hero-carousel__img" src="assets/images/publications/star.png" alt="StAR 논문 대표 이미지" />
+                </div>
+                <div class="hero-carousel__overlay">
+                  <div class="hero-carousel__paper-title hero-carousel__paper-title--stacked">
+                    <span>StAR: Segment Anything Reasoner, ECCV 2026</span>
+                    <span class="pub-note">(Poster)</span>
+                  </div>
+                  <a class="hero-carousel__learn-more" href="https://arxiv.org/abs/2603.14382" target="_blank" rel="noopener noreferrer">Learn more</a>
+                </div>
+              </article>
+
+              <article class="hero-carousel__slide hero-carousel__slide--contain">
+                <div class="hero-carousel__paper-canvas">
+                  <img class="hero-carousel__img" src="assets/images/publications/esc.png" alt="OV-Stitcher 논문 대표 이미지" />
+                </div>
+                <div class="hero-carousel__overlay">
+                  <div class="hero-carousel__paper-title hero-carousel__paper-title--stacked">
+                    <span>Emulating Self-attention with Convolution for Efficient Image Super-Resolution, ICCV 2025</span>
+                    <span class="pub-note">(Highlight Paper)</span>
+                  </div>
+                  <a class="hero-carousel__learn-more" href="https://openaccess.thecvf.com/content/ICCV2025/html/Lee_Emulating_Self-attention_with_Convolution_for_Efficient_Image_Super-Resolution_ICCV_2025_paper.html" target="_blank" rel="noopener noreferrer">Learn more</a>
+                </div>
+              </article>
+
+              <article class="hero-carousel__slide hero-carousel__slide--contain">
+                <div class="hero-carousel__paper-canvas">
+                  <img class="hero-carousel__img" src="assets/images/publications/soma.png" alt="SoMA 논문 대표 이미지" />
+                </div>
+                <div class="hero-carousel__overlay">
+                  <div class="hero-carousel__paper-title hero-carousel__paper-title--stacked">
+                    <span>SoMA: Singular Value Decomposed Minor Components Adaptation for Domain Generalizable Representation Learning, CVPR 2025</span>
+                    <span class="pub-note">(Highlight Paper)</span>
+                  </div>
+                  <a class="hero-carousel__learn-more" href="https://arxiv.org/abs/2412.04077" target="_blank" rel="noopener noreferrer">Learn more</a>
+                </div>
+              </article>
+
+              <button class="hero-carousel__btn hero-carousel__btn--prev" type="button" aria-label="Previous slide">‹</button>
+              <button class="hero-carousel__btn hero-carousel__btn--next" type="button" aria-label="Next slide">›</button>
+            </div>
+            <div class="hero-carousel__dots" aria-label="Carousel pagination">
+              <button class="hero-carousel__dot is-active" type="button" aria-label="Go to slide 1"></button>
+              <button class="hero-carousel__dot" type="button" aria-label="Go to slide 2"></button>
+              <button class="hero-carousel__dot" type="button" aria-label="Go to slide 3"></button>
+              <button class="hero-carousel__dot" type="button" aria-label="Go to slide 4"></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <div class="section__head">
+            <div class="section__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 10v10M10 8v12M14 12v8M18 5v15M4 20h16" /></svg></div>
+            <h2 class="section__title">Announcement</h2>
+          </div>
+          <div class="card callout">
+            <blockquote class="quote">“We build machine intelligence that can see, understand, and adapt—across data, domains, and real-world constraints.”</blockquote>
+            <p class="muted">We are always looking for self-motivated and passionate <b>PhD/MS students</b>, <b>Postdocs</b>, and <b>Undergraduate interns</b> to join our lab.</p>
+            <a class="see-more" href="contact.html">See more...</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="wrap">
+          <div class="section__head">
+            <div class="section__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h11a2 2 0 0 1 2 2v14H7a2 2 0 0 1-2-2V4Z" /><path d="M18 8h2v10a2 2 0 0 1-2 2M8 8h6M8 12h6M8 16h4" /></svg></div>
+            <h2 class="section__title">News</h2>
+          </div>
+          <div class="news">
+            <article class="news-item"><div class="news-thumb">PAPER</div><div><div class="news-date">June 2026</div><div class="news-text">One paper, <b>StAR: Segment Anything Reasoner</b>, was accepted to ECCV 2026.</div></div></article>
+            <article class="news-item"><div class="news-thumb">MEMBER</div><div><div class="news-date">March 2026</div><div class="news-text"><b>Jaegyun Im</b> and <b>Dongwoo Kim</b> joined MILab as new M.S. students.</div></div></article>
+            <article class="news-item"><div class="news-thumb">PAPER</div><div><div class="news-date">February 2026</div><div class="news-text">Two papers, <b>OV-Stitcher</b> and <b>RecycleLoRA</b>, were accepted to CVPR 2026 Findings.</div></div></article>
+            <article class="news-item"><div class="news-thumb">PAPER</div><div><div class="news-date">June 2025</div><div class="news-text"><b>Emulating Self-attention with Convolution for Efficient Image Super-Resolution (ESC)</b> was accepted to ICCV 2025 and selected as a Highlight paper.</div></div></article>
+            <article class="news-item"><div class="news-thumb">PAPER</div><div><div class="news-date">February 2025</div><div class="news-text"><b>SoMA</b> was accepted to CVPR 2025 and selected as a Highlight paper.</div></div></article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer__inner">
+        <p>Machine Intelligence Laboratory, Department of Artificial Intelligence, University of Seoul · 163 Seoulsiripdae-ro, Dongdaemun-gu, Seoul, Republic of Korea</p>
+        <p>© <span id="year"></span> MILab</p>
+      </div>
+    </footer>
+  </body>
+</html>
