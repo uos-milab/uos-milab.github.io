@@ -38,7 +38,6 @@ python3 -m http.server 8000
 - 구성원 사진: `assets/images/members/`
 - 논문 대표 이미지: `assets/images/publications/`
 - Home 대표 이미지: `assets/images/hero-machine-vision.webp`
-- Gallery 사진: `gallery.html`의 `.gallery-placeholder`를 실제 `<img>` 요소로 교체
 
 ## GitHub Pages
 
