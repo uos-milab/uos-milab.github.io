@@ -1,3 +1,5 @@
+https://uos-milab.gihub.io
+
 # MILab Website
 
 서울시립대학교 Machine Intelligence Lab의 정적 홈페이지입니다.
