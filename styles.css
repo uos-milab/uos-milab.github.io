@@ -1626,6 +1626,11 @@ main {
    MILAB DISTINCTIVE REDESIGN
    Visual language: machine grid / editorial blocks / restrained blue
 ========================================================= */
+/*
+ * The distinctive redesign is retained below for reference, but disabled so
+ * the original rounded blue-and-white design above is used again.
+ */
+@supports (display: milab-distinctive-design) {
 :root {
   --bg: #f7f8fa;
   --alt: #eef1f4;
@@ -3348,5 +3353,254 @@ main {
 
   .research-media {
     width: 104px;
+  }
+}
+}
+
+/* Content features added after the original design remain active. */
+.hero-carousel__slide--contain {
+  display: grid;
+  padding: 16px var(--pad-x);
+  align-items: stretch;
+  justify-content: stretch;
+  grid-template-rows: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+}
+
+.hero-carousel__slide--contain .hero-carousel__overlay {
+  position: static;
+  width: 100%;
+}
+
+.hero-carousel__paper-canvas {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: min(100%, 1060px);
+  height: auto;
+  min-height: 0;
+  padding: clamp(14px, 2vw, 26px);
+  align-items: center;
+  align-self: stretch;
+  justify-content: center;
+  justify-self: center;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: white;
+  box-shadow: var(--shadow);
+}
+
+.hero-carousel__paper-title--stacked {
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4px;
+}
+
+@media (max-width: 720px) {
+  .hero-carousel__slide--contain .hero-carousel__overlay {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .hero-carousel__slide--contain .hero-carousel__learn-more {
+    justify-content: center;
+  }
+}
+
+/* Simplified identity slide: typography, whitespace, and one brand line only. */
+.hero-carousel__slide--identity {
+  display: flex;
+  padding: 44px clamp(68px, 8vw, 96px);
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(circle 220px at var(--network-x, 78%) var(--network-y, 42%), rgba(23, 105, 194, 0.13), transparent 72%),
+    linear-gradient(112deg, #f3f6f9 0%, #edf3f8 62%, #e2edf8 100%);
+  box-shadow: inset 0 0 70px rgba(13, 45, 81, 0.055);
+}
+
+.hero-carousel__slide--identity::before {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--blue);
+  content: "";
+  pointer-events: none;
+}
+
+.hero-carousel__slide--identity::after {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  display: block;
+  background-image: radial-gradient(circle, rgba(23, 105, 194, 0.22) 0.8px, transparent 0.9px);
+  background-position: 7px 7px;
+  background-size: 28px 28px;
+  content: "";
+  opacity: 0.16;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(90deg, transparent 6%, black 54%, black 100%);
+  mask-image: linear-gradient(90deg, transparent 6%, black 54%, black 100%);
+}
+
+.hero-identity__network {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.72;
+  pointer-events: none;
+}
+
+.hero-carousel__slide--identity .hero-identity__content {
+  position: relative;
+  z-index: 2;
+  inset: auto;
+  width: min(100%, 800px);
+  max-width: 800px;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 13px;
+}
+
+.hero-carousel__slide--identity .hero-carousel__kicker {
+  padding: 0;
+  color: var(--blue);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+}
+
+.hero-carousel__slide--identity .hero-carousel__headline {
+  color: var(--blue-deep);
+  font-size: clamp(54px, 6vw, 76px);
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+  text-shadow: none;
+}
+
+.hero-carousel__slide--identity .hero-carousel__sub {
+  max-width: 62ch;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+  text-shadow: none;
+}
+
+.hero-carousel__slide--identity .hero-carousel__actions {
+  margin-top: 3px;
+}
+
+.hero-carousel__slide--identity .hero-carousel__actions .btn:not(.primary) {
+  border-color: var(--line-strong);
+  background: white;
+  color: var(--blue-dark);
+}
+
+.hero-carousel__slide--identity .hero-identity__fields {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 13px;
+  padding-top: 16px;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-top: 1px solid var(--line);
+}
+
+.hero-identity__fields span {
+  display: inline-flex;
+  min-height: 30px;
+  padding: 5px 11px;
+  align-items: center;
+  border: 1px solid rgba(23, 105, 194, 0.16);
+  border-radius: 999px;
+  background: white;
+  color: var(--blue-dark);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.hero-identity__fields span::before {
+  width: 6px;
+  height: 6px;
+  margin-right: 7px;
+  border-radius: 50%;
+  background: var(--blue);
+  content: "";
+}
+
+.hero-carousel__slide--identity ~ .hero-carousel__btn {
+  border-color: rgba(255, 255, 255, 0.38);
+  background: rgba(3, 20, 39, 0.34);
+  color: white;
+}
+
+@media (max-width: 720px) {
+  .hero-carousel__slide--identity {
+    padding: 30px 66px;
+  }
+
+  .hero-carousel__slide--identity .hero-identity__content {
+    width: 100%;
+  }
+
+  .hero-carousel__slide--identity .hero-carousel__headline {
+    font-size: clamp(38px, 11vw, 48px);
+  }
+
+  .hero-carousel__slide--identity .hero-carousel__sub {
+    max-width: 30ch;
+    font-size: 13px;
+  }
+
+  .hero-carousel__slide--identity .hero-identity__fields {
+    max-width: 100%;
+    margin-top: 7px;
+    padding-top: 12px;
+  }
+
+  .hero-identity__fields span {
+    min-height: 28px;
+    padding: 4px 9px;
+    font-size: 10px;
+  }
+
+  .hero-identity__network {
+    opacity: 0.38;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-carousel__slide--identity {
+    padding-right: 62px;
+    padding-left: 62px;
+  }
+
+  .hero-carousel__slide--identity .hero-carousel__headline {
+    font-size: 38px;
+  }
+
+  .hero-carousel__slide--identity .hero-carousel__actions {
+    gap: 7px;
+  }
+
+  .hero-carousel__slide--identity .hero-carousel__actions .btn {
+    padding-right: 11px;
+    padding-left: 11px;
+    font-size: 12px;
   }
 }

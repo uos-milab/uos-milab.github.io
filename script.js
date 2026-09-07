@@ -65,7 +65,7 @@ function profileTemplate(person) {
     ? `<a href="${person.link}" target="_blank" rel="noopener noreferrer">${person.name} ↗</a>`
     : person.name;
   const email = person.email
-    ? `<div class="profile-email"><a href="mailto:${person.email}">${person.email.replace("@", " (at) ")}</a></div>`
+    ? `<div class="profile-email"><a href="mailto:${person.email}">${person.email.replace("@", "@")}</a></div>`
     : "";
   const current = person.current ? `<div class="profile-current">Current: ${person.current}</div>` : "";
   const tags = (person.interests || []).filter(Boolean).map((interest) => `<span class="profile-tag">${interest}</span>`).join("");
@@ -166,6 +166,152 @@ function initHeroCarousel() {
   start();
 }
 
+function initIdentityNetwork() {
+  const slide = document.querySelector(".hero-carousel__slide--identity");
+  const canvas = slide?.querySelector(".hero-identity__network");
+  const context = canvas?.getContext("2d");
+  if (!slide || !canvas || !context) return;
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const canInteract = finePointer && !reducedMotion;
+  const pointer = { x: 0, y: 0, targetX: 0, targetY: 0, presence: 0, active: false };
+  let width = 0;
+  let height = 0;
+  let nodes = [];
+
+  const seededRandom = (seed) => {
+    const value = Math.sin(seed * 932.17) * 43758.5453;
+    return value - Math.floor(value);
+  };
+
+  const createNodes = () => {
+    const count = Math.max(16, Math.min(34, Math.round((width * height) / 18000)));
+    nodes = Array.from({ length: count }, (_, index) => ({
+      x: seededRandom(index + 11) * width,
+      y: seededRandom(index + 47) * height,
+      phase: seededRandom(index + 83) * Math.PI * 2,
+      speed: 0.45 + seededRandom(index + 131) * 0.45,
+    }));
+  };
+
+  const draw = (timestamp = 0) => {
+    context.clearRect(0, 0, width, height);
+    const time = reducedMotion ? 0 : timestamp / 1000;
+    const points = nodes.map((node) => {
+      let x = node.x + Math.sin(time * node.speed + node.phase) * 5;
+      let y = node.y + Math.cos(time * node.speed * 0.8 + node.phase) * 5;
+      const dx = pointer.x - x;
+      const dy = pointer.y - y;
+      const distance = Math.hypot(dx, dy) || 1;
+
+      if (pointer.presence > 0.01 && distance < 210) {
+        const pull = (1 - distance / 210) * 12 * pointer.presence;
+        x += (dx / distance) * pull;
+        y += (dy / distance) * pull;
+      }
+      return { x, y };
+    });
+
+    for (let first = 0; first < points.length; first += 1) {
+      for (let second = first + 1; second < points.length; second += 1) {
+        const distance = Math.hypot(points[first].x - points[second].x, points[first].y - points[second].y);
+        if (distance > 135) continue;
+        context.beginPath();
+        context.moveTo(points[first].x, points[first].y);
+        context.lineTo(points[second].x, points[second].y);
+        context.strokeStyle = `rgba(23, 105, 194, ${0.12 * (1 - distance / 135)})`;
+        context.lineWidth = 1;
+        context.stroke();
+      }
+    }
+
+    if (pointer.presence > 0.01) {
+      const nearby = points
+        .map((point) => ({ ...point, distance: Math.hypot(point.x - pointer.x, point.y - pointer.y) }))
+        .filter((point) => point.distance < 205)
+        .sort((first, second) => Math.atan2(first.y - pointer.y, first.x - pointer.x) - Math.atan2(second.y - pointer.y, second.x - pointer.x))
+        .slice(0, 9);
+
+      nearby.forEach((point) => {
+        context.beginPath();
+        context.moveTo(pointer.x, pointer.y);
+        context.lineTo(point.x, point.y);
+        context.strokeStyle = `rgba(23, 105, 194, ${(0.3 * (1 - point.distance / 205)) * pointer.presence})`;
+        context.lineWidth = 1;
+        context.stroke();
+      });
+
+      if (nearby.length > 2) {
+        context.beginPath();
+        context.moveTo(nearby[0].x, nearby[0].y);
+        nearby.slice(1).forEach((point) => context.lineTo(point.x, point.y));
+        context.closePath();
+        context.strokeStyle = `rgba(23, 105, 194, ${0.1 * pointer.presence})`;
+        context.stroke();
+      }
+
+      context.beginPath();
+      context.arc(pointer.x, pointer.y, 2.2, 0, Math.PI * 2);
+      context.fillStyle = `rgba(23, 105, 194, ${0.55 * pointer.presence})`;
+      context.fill();
+    }
+
+    points.forEach((point) => {
+      const distance = Math.hypot(point.x - pointer.x, point.y - pointer.y);
+      const emphasis = pointer.presence > 0 && distance < 205 ? 0.18 * (1 - distance / 205) : 0;
+      context.beginPath();
+      context.arc(point.x, point.y, 1.5, 0, Math.PI * 2);
+      context.fillStyle = `rgba(23, 105, 194, ${0.2 + emphasis})`;
+      context.fill();
+    });
+  };
+
+  const resize = () => {
+    const bounds = slide.getBoundingClientRect();
+    const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+    width = Math.max(1, bounds.width);
+    height = Math.max(1, bounds.height);
+    canvas.width = Math.round(width * pixelRatio);
+    canvas.height = Math.round(height * pixelRatio);
+    context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+    pointer.x = pointer.targetX = width * 0.78;
+    pointer.y = pointer.targetY = height * 0.42;
+    createNodes();
+    draw();
+  };
+
+  if (canInteract) {
+    slide.addEventListener("pointermove", (event) => {
+      const bounds = slide.getBoundingClientRect();
+      pointer.targetX = event.clientX - bounds.left;
+      pointer.targetY = event.clientY - bounds.top;
+      pointer.active = true;
+      slide.style.setProperty("--network-x", `${(pointer.targetX / width) * 100}%`);
+      slide.style.setProperty("--network-y", `${(pointer.targetY / height) * 100}%`);
+    });
+
+    slide.addEventListener("pointerleave", () => {
+      pointer.active = false;
+      slide.style.removeProperty("--network-x");
+      slide.style.removeProperty("--network-y");
+    });
+  }
+
+  const animate = (timestamp) => {
+    pointer.x += (pointer.targetX - pointer.x) * 0.11;
+    pointer.y += (pointer.targetY - pointer.y) * 0.11;
+    pointer.presence += ((pointer.active ? 1 : 0) - pointer.presence) * 0.08;
+    if (slide.classList.contains("is-active") && !document.hidden) draw(timestamp);
+    window.requestAnimationFrame(animate);
+  };
+
+  const resizeObserver = new ResizeObserver(resize);
+  resizeObserver.observe(slide);
+  resize();
+  if (canInteract) window.requestAnimationFrame(animate);
+}
+
 function initGalleryCarousels() {
   document.querySelectorAll(".gallery-carousel").forEach((carousel) => {
     const slides = [...carousel.querySelectorAll(".gallery-slide")];
@@ -245,5 +391,6 @@ renderMembers();
 renderPublications();
 initNavigation();
 initHeroCarousel();
+initIdentityNetwork();
 initGalleryCarousels();
 initGalleryLightbox();

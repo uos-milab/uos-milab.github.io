@@ -14,7 +14,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800&amp;display=swap" rel="stylesheet" />
-    <link rel="preload" href="assets/images/hero-machine-vision.jpg" as="image" type="image/png" />
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
   </head>
@@ -53,16 +52,21 @@
         <div class="wrap">
           <div class="hero-carousel" data-autoplay="true" data-interval="5500">
             <div class="hero-carousel__viewport" aria-label="MILab research highlights">
-              <article class="hero-carousel__slide is-active">
-                <img class="hero-carousel__img" src="assets/images/hero-machine-vision.jpg" alt="인공지능의 시각 인식 과정을 표현한 그래픽" width="1672" height="941" />
-                <div class="hero-carousel__shade" aria-hidden="true"></div>
-                <div class="hero-carousel__overlay hero-carousel__overlay--minimal">
+              <article class="hero-carousel__slide hero-carousel__slide--identity is-active">
+                <canvas class="hero-identity__network" aria-hidden="true"></canvas>
+                <div class="hero-carousel__overlay hero-carousel__overlay--minimal hero-identity__content">
                   <div class="hero-carousel__kicker">WELCOME TO</div>
-                  <div class="hero-carousel__headline">Machine Intelligence Lab.</div>
+                  <div class="hero-carousel__headline">Machine Intelligence<br />Lab.</div>
                   <div class="hero-carousel__sub">We explore efficient, robust, and generalizable intelligence through deep learning and computer vision.</div>
                   <div class="hero-carousel__actions">
                     <a class="btn primary" href="contact.html">Join MILab</a>
                     <a class="btn" href="publications.html">See Publications</a>
+                  </div>
+                  <div class="hero-identity__fields" aria-label="Research areas">
+                    <span>Computer Vision</span>
+                    <span>Multimodal AI</span>
+                    <span>Efficient AI</span>
+                    <span>VLA &amp; Embodied AI</span>
                   </div>
                 </div>
               </article>
@@ -153,7 +157,7 @@
     <footer class="site-footer">
       <div class="wrap footer__inner">
         <p>Machine Intelligence Laboratory, Department of Artificial Intelligence, University of Seoul · 163 Seoulsiripdae-ro, Dongdaemun-gu, Seoul, Republic of Korea</p>
-        <p>© </span> 2023 MILab</p>
+        <p>© 2023 MILab</p>
       </div>
     </footer>
   </body>
