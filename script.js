@@ -22,6 +22,7 @@ const MS = [
 
 const undergraduateInterns = [
   { name: "Yerin Kang", email: "", interests: ["Deep Learning", "Computer Vision"], photo: "assets/images/members/yerinkang.jpg" },
+  { name: "Minwoo Park", email: "minubag613@gmail.com", interests: ["Signal Processing", "Knowledge Graph"], photo: "assets/images/members/minwoopark.jpg" },
   // { name: "Gildong Hong", email: "", interests: ["Deep Learning", "Computer Vision"], initials: "GD" },
 ];
 
