@@ -26,7 +26,7 @@ const undergraduateInterns = [
 ];
 
 const alumni = [
-  { name: "Seokju Yun", current: "Ph.D. Course at KAIST", interests: ["Computer Vision", "Efficient Deep Learning", "Domain Generalization"], photo: "assets/images/members/seokjuyun.jpg" },
+  { name: "Seokju Yun", email: "wsz871@gmail.com", current: "Ph.D. Course at KAIST", interests: ["Computer Vision", "Efficient Deep Learning", "Domain Generalization"], photo: "assets/images/members/seokjuyun.jpg" },
   { name: "Seunghyun Oh", email: "osh1795@naver.com", current: "Former MILab Member", interests: ["Computer Vision", "Vision Language Models", "Anomaly Detection"], photo: "assets/images/members/seunghyunoh.jpg" },
   { name: "Taehoon Lim", email: "lth9029@gmail.com", current: "Korea Electronics Technology Institute (KETI)", interests: ["Computer Vision", "Anomaly Detection"], photo: "assets/images/members/taehoonlim.jpg" },
 ];
