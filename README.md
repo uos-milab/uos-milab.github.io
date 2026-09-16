@@ -30,11 +30,11 @@ python3 -m http.server 8000
 
 ## 콘텐츠 수정
 
-- 구성원과 논문 데이터: `script.js`
+- 구성원과 논문 데이터: `script.js` (구성원 추가 및 논문 추가 시, 해당 js 파일에 추가하시면 됩니다.)
 - 페이지 문구와 연락처: 각 HTML 파일
 - 색상과 레이아웃: `styles.css`
 - 구성원 사진: `assets/images/members/`
-- 논문 대표 이미지: `assets/images/publications/`
+- 논문 이미지: `assets/images/publications/`
 - Home 대표 이미지: `assets/images/hero-machine-vision.webp`
 
 ## GitHub Pages
