@@ -33,6 +33,7 @@ const alumni = [
 ];
 
 const publications = [
+  { year: 2026, title: "TIRAD: Text-guided Image Residual Learning for Generalist Anomaly Detection", authors: "Seongsu Lee, Seunghyun Oh, Seungjae Moon, Youngmin Ro", venue: "ACCV", detail: "Asia Conference on Computer Vision · 2026", link: "", image: "" },
   { year: 2026, title: "StAR: Segment Anything Reasoner", authors: "Seokju Yun, Dongheon Lee, Noori Bae, Jaesung Jun, Chanseul Cho, Youngmin Ro", venue: "ECCV", detail: "European Conference on Computer Vision · 2026", link: "https://arxiv.org/abs/2603.14382", image: "assets/images/publications/star.png" },
   { year: 2026, title: "Partial Large Kernel CNNs for Efficient Super-Resolution", authors: "Dongheon Lee, Seokju Yun, Youngmin Ro", venue: "IEEE Access", detail: "April 2026", link: "https://ieeexplore.ieee.org/document/11493906", image: "assets/images/publications/plksr.png" },
   { year: 2026, title: "GroupLoRA: Enhancing Rank Effectiveness Through Group-Wise Decomposition for Low-Rank Adaptation", authors: "Jaesung Jun, Youngmin Ro", venue: "IEEE Access", detail: "March 2026", link: "https://ieeexplore.ieee.org/document/11424420", image: "assets/images/publications/grouplora.png" },
