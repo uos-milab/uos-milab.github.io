@@ -9,7 +9,7 @@ const PhD = [
 const MS = [
   { name: "Seunghye Chae", email: "tmhey@uos.ac.kr", interests: ["MLLM Reinforcement Learning", "Logical Anomaly Detection", "Domain Generalization"], photo: "assets/images/members/seunghyechae.jpg" },
   { name: "Seongsu Lee", email: "ssulee0206@gmail.com", interests: ["Computer Vision", "Anomaly Detection", "Vision Language Models"], photo: "assets/images/members/seungsulee.jpg" },
-  { name: "Seungjae Moon", email: "msj0243@gmail.com", interests: ["Self-evolving MLLMs", "Open-vocabulary Segmentation"], photo: "assets/images/members/seungjaemoon.jpg" },
+  { name: "Seungjae Moon", email: "msj0243@gmail.com", interests: ["Self-evolving MLLMs", "Open-vocabulary Segmentation"], link: "https://github.com/atw617", photo: "assets/images/members/seungjaemoon.jpg",},
   { name: "Chanseul Cho", email: "chanseul2001@gmail.com", interests: ["MLLM Agent", "MLLM Reinforcement Learning", "Parameter Efficient Fine-Tuning"], photo: "assets/images/members/chanseulcho.jpg" },
   { name: "Noori Bae", email: "nooribae1115@gmail.com", interests: ["MLLM Reinforcement Learning", "Multi-turn MLLM"], photo: "assets/images/members/nooribae.jpg" },
   { name: "Jaegyun Im", email: "imij0522@gmail.com", interests: ["Multi-modal Large Language Models", "Generative AI"], photo: "assets/images/members/jaegyunim.jpg" },
