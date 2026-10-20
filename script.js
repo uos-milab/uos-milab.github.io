@@ -33,6 +33,8 @@ const alumni = [
 ];
 
 const publications = [
+  { year: 2026, title: "Attention Maps Know When to Think: Training-Free Difficulty-Aware Chain-of-Thought for Reasoning Segmentation", authors: "Chanseul Cho*, Jaesung Jun*, Dongheon Lee, Youngmin Ro", venue: "WACV", detail: "IEEE/CVF Winter Conference on Applications of Computer Vision · 2027", link: "", image: "assets/images/publications/dacot.png" },
+  { year: 2026, title: "GRIT: Gradient Masking for Visually Misgrounded Tokens in Text-Rich Reasoning", authors: "Chanseul Cho, Noori Bae, Dongheon Lee, Youngmin Ro", venue: "WACV", detail: "IEEE/CVF Winter Conference on Applications of Computer Vision · 2027", link: "", image: "assets/images/publications/grit.png" },
   { year: 2026, title: "TIRAD: Text-guided Image Residual Learning for Generalist Anomaly Detection", authors: "Seongsu Lee, Seunghyun Oh, Seungjae Moon, Youngmin Ro", venue: "ACCV", detail: "Asia Conference on Computer Vision · 2026", link: "", image: "assets/images/publications/tirad.png" },
   { year: 2026, title: "ProX-MAD: Aggregating Spatial Context into Representative Proxies for Few-shot Medical Anomaly Detection", authors: "Seunghyun Oh, Seongsu Lee, Seunghye Chae, Youngmin Ro", venue: "ACCV", detail: "Asia Conference on Computer Vision · 2026", link: "", image: "assets/images/publications/prox-mad.png" },
   { year: 2026, title: "FFNet: MetaMixer-based Efficient Convolutional Mixer Design", authors: "Seokju Yun, Dongheon Lee, Youngmin Ro", venue: "ACCV", detail: "Asia Conference on Computer Vision · 2026", link: "https://arxiv.org/abs/2406.02021", image: "assets/images/publications/ffnet.png" },
