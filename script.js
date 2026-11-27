@@ -61,6 +61,10 @@ const publications = [
   { year: 2019, title: "Backbone Can Not be Trained at Once: Rolling Back to Pre-trained Network for Person Re-Identification", authors: "Youngmin Ro, Jongwon Choi, Dae Ung Jo, Byeongho Heo, Jongin Lim, Jin Young Choi", venue: "AAAI", detail: "Thirty-Third AAAI Conference · 2019", link: "https://www.aaai.org/ojs/index.php/AAAI/article/view/4913", image: "assets/images/publications/backbone-rollback.png" },
 ];
 
+const preprints = [
+  {year: 2026, title: "ASTERISM: Do Multimodal LLMs Actually Look at All the Images?", authors: "Chanseul Cho, Dongwoo Kim, Noori Bae, Seungjae Moon, Seongsu Lee, Youngmin Ro", venue: "arXiv", detail: "2026", link: "https://arxiv.org/pdf/2611.32316", image: "assets/images/publications/asterism.png"},
+  {year: 2026, title: "What Is Redundant at High Resolution? Efficient Attention and Feed-Forward Design for All-in-One Image Restoration?", authors: "Dongheon Lee, DongJae Lee, Sewhan Chun, Chanseul Cho, Youngwook Kim, Youngmin Ro, Yonghyun Jeong", venue: "arXiv", detail: "2026", link: "https://arxiv.org/pdf/2611.33636", image: "assets/images/publications/HiGLR.png"},];
+
 function getInitials(name) {
   return name.split(/\s+/).map((part) => part[0]).join("").slice(0, 2).toUpperCase();
 }
