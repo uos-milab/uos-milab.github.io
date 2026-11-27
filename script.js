@@ -97,21 +97,43 @@ function renderMembers() {
   alumniGrid.innerHTML = alumni.map(profileTemplate).join("");
 }
 
-function renderPublications() {
-  const target = document.querySelector("#publication-list");
+function renderPublications(selector, papers) {
+  const target = document.querySelector(selector);
   if (!target) return;
-  const years = [...new Set(publications.map((publication) => publication.year))];
+
+  const years = [...new Set(papers.map((publication) => publication.year))]
+    .sort((a, b) => b - a);
+
   target.innerHTML = years.map((year) => {
-    const entries = publications.filter((publication) => publication.year === year).map((publication) => `
-      <article class="pub-item">
-        <div class="pub-item__thumb"><img src="${publication.image}" alt="" loading="lazy" width="366" height="209"></div>
-        <div>
-          <div class="pub-item__title">${publication.title}<a class="pub-link" href="${publication.link}" target="_blank" rel="noopener noreferrer">Paper</a></div>
-          <div class="pub-item__authors">${publication.authors}</div>
-          <div class="pub-item__venue">${publication.venue} · ${publication.detail}${publication.note ? ` <span class="pub-note">(${publication.note})</span>` : ""}</div>
-        </div>
-      </article>`).join("");
-    return `<section><h3 class="pub-year">${year}</h3><div class="pub-list">${entries}</div></section>`;
+    const entries = papers
+      .filter((publication) => publication.year === year)
+      .map((publication) => `
+        <article class="pub-item">
+          <div class="pub-item__thumb">
+            <img src="${publication.image}" alt="" loading="lazy" width="366" height="209">
+          </div>
+          <div>
+            <div class="pub-item__title">
+              ${publication.title}
+              ${publication.link ? `
+                <a class="pub-link" href="${publication.link}" target="_blank" rel="noopener noreferrer">Paper</a>
+              ` : ""}
+            </div>
+            <div class="pub-item__authors">${publication.authors}</div>
+            <div class="pub-item__venue">
+              ${publication.venue} · ${publication.detail}
+              ${publication.note ? ` <span class="pub-note">(${publication.note})</span>` : ""}
+            </div>
+          </div>
+        </article>
+      `).join("");
+
+    return `
+      <section>
+        <h3 class="pub-year">${year}</h3>
+        <div class="pub-list">${entries}</div>
+      </section>
+    `;
   }).join("");
 }
 
@@ -400,7 +422,8 @@ function initGalleryLightbox() {
 
 document.querySelectorAll("#year").forEach((year) => { year.textContent = new Date().getFullYear(); });
 renderMembers();
-renderPublications();
+renderPublications("#publication-list", publications);
+renderPublications("#preprint-list", preprints);
 initNavigation();
 initHeroCarousel();
 initIdentityNetwork();
